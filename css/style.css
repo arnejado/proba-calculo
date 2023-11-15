@@ -1,0 +1,66 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    }
+    
+    .panel { 
+        grid-area: 1 / 1 / 2 / 11; 
+        background-color: lightgray;
+    }
+    
+
+
+    .boton1 { grid-area: 2 / 1 / 3 / 2; }
+    .boton2 { grid-area: 2 / 2 / 3 / 3; }
+    .boton3 { grid-area: 2 / 3 / 3 / 4; }
+    .boton4 { grid-area: 2 / 4 / 3 / 5; }
+    .boton5 { grid-area: 2 / 5 / 3 / 6; }
+    .boton6 { grid-area: 2 / 6 / 3 / 7; }
+    .boton7 { grid-area: 2 / 7 / 3 / 8; }
+    .boton8 { grid-area: 2 / 8 / 3 / 9; }
+    .boton9 { grid-area: 2 / 9 / 3 / 10; }
+    .boton10 { grid-area: 2 / 10 / 3 / 11; }
+
+/* Estilo del botón */
+.boton {
+    /* Fondo grisáceo */
+    background-color: #d3d3d3;
+    /* Número en negro */
+    color: black;
+    /* Borde redondeado */
+    border: 2px solid #a9a9a9;
+    border-radius: 10px;
+    /* Sombra */
+    box-shadow: 3px 3px 5px #888888;
+    /* Tamaño del botón */
+    height: 50px;
+    /* Fuente del número */
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    /* Alineación del número */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Efecto al pasar el ratón */
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Efecto al pasar el ratón */
+  .boton:hover {
+    /* Cambiar el color de fondo */
+    background-color: #a9a9a9;
+    /* Cambiar el color del borde */
+    border-color: #d3d3d3;
+    /* Cambiar el color del número */
+    color: white;
+    /* Cambiar la sombra */
+    box-shadow: 0 0 10px #ffffff;
+    /* Cambiar el tamaño del botón */
+    transform: scale(1.1);
+  }
+  
