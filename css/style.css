@@ -5,7 +5,11 @@
   grid-column-gap: 0px;
   grid-row-gap: 4px;
   }
-  
+
+/* Codigo para dividir en panel en dos mitades
+Arriba todo
+Abajo los botones */
+
 .panel { 
     grid-area: 1 / 1 / 2 / 2; 
       background-color: lightgray;
@@ -13,32 +17,56 @@
   
 .parent { grid-area: 2 / 1 / 3 / 2; }
 
+/* Termina el código de división */
 
+/* Empieza el de la botonera */
+    /* Pantallas pequeñas */
 
-.parent {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 4px;
-    grid-row-gap: 0px;
-    }
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 4px;
+      grid-row-gap: 4px;
+      }
+      
+      .boton1 { grid-area: 1 / 1 / 2 / 2; }
+      .boton2 { grid-area: 1 / 2 / 2 / 3; }
+      .boton3 { grid-area: 1 / 3 / 2 / 4; }
+      .boton4 { grid-area: 1 / 4 / 2 / 5; }
+      .boton5 { grid-area: 1 / 5 / 2 / 6; }
+      .botonCE { grid-area: 1 / 6 / 2 / 7; }
+      .boton6 { grid-area: 2 / 1 / 3 / 2; }
+      .boton7 { grid-area: 2 / 2 / 3 / 3; }
+      .boton8 { grid-area: 2 / 3 / 3 / 4; }
+      .boton9 { grid-area: 2 / 4 / 3 / 5; }
+      .boton0 { grid-area: 2 / 5 / 3 / 6; }
+      .botonIntro { grid-area: 2 / 6 / 3 / 7; }
 
+    /* Pantallas grandes */
 
+@media(min-width: 768px) {
+  .parent {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 4px;
+      grid-row-gap: 0px;
+      }
     
-
-    .boton1 { grid-area: 1 / 1 / 2 / 2; }
-    .boton2 { grid-area: 1 / 2 / 2 / 3; }
-    .boton3 { grid-area: 1 / 3 / 2 / 4; }
-    .boton4 { grid-area: 1 / 4 / 2 / 5; }
-    .boton5 { grid-area: 1 / 5 / 2 / 6; }
-    .boton6 { grid-area: 1 / 6 / 2 / 7; }
-    .boton7 { grid-area: 1 / 7 / 2 / 8; }
-    .boton8 { grid-area: 1 / 8 / 2 / 9; }
-    .boton9 { grid-area: 1 / 9 / 2 / 10; }
-    .boton0 { grid-area: 1 / 10 / 2 / 11; }
-    .botonCE { grid-area: 1 / 11 / 2 / 12; }
-    .botonIntro { grid-area: 1 / 12 / 2 / 13; }
-
+      .boton1 { grid-area: 1 / 1 / 2 / 2; }
+      .boton2 { grid-area: 1 / 2 / 2 / 3; }
+      .boton3 { grid-area: 1 / 3 / 2 / 4; }
+      .boton4 { grid-area: 1 / 4 / 2 / 5; }
+      .boton5 { grid-area: 1 / 5 / 2 / 6; }
+      .boton6 { grid-area: 1 / 6 / 2 / 7; }
+      .boton7 { grid-area: 1 / 7 / 2 / 8; }
+      .boton8 { grid-area: 1 / 8 / 2 / 9; }
+      .boton9 { grid-area: 1 / 9 / 2 / 10; }
+      .boton0 { grid-area: 1 / 10 / 2 / 11; }
+      .botonCE { grid-area: 1 / 11 / 2 / 12; }
+      .botonIntro { grid-area: 1 / 12 / 2 / 13; }
+}
 /* estilo panel */
 
 .panel {
