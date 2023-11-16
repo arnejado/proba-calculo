@@ -1,29 +1,43 @@
+.tapete {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 4px;
+  }
+  
+.panel { 
+    grid-area: 1 / 1 / 2 / 2; 
+      background-color: lightgray;
+  }
+  
+.parent { grid-area: 2 / 1 / 3 / 2; }
+
+
+
 .parent {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     grid-column-gap: 4px;
-    grid-row-gap: 4px;
+    grid-row-gap: 0px;
     }
-    
-    .panel { 
-        grid-area: 1 / 1 / 2 / 13; 
-        background-color: lightgray;
-    }
+
+
     
 
-    .boton1 { grid-area: 2 / 1 / 3 / 2; }
-    .boton2 { grid-area: 2 / 2 / 3 / 3; }
-    .boton3 { grid-area: 2 / 3 / 3 / 4; }
-    .boton4 { grid-area: 2 / 4 / 3 / 5; }
-    .boton5 { grid-area: 2 / 5 / 3 / 6; }
-    .boton6 { grid-area: 2 / 6 / 3 / 7; }
-    .boton7 { grid-area: 2 / 7 / 3 / 8; }
-    .boton8 { grid-area: 2 / 8 / 3 / 9; }
-    .boton9 { grid-area: 2 / 9 / 3 / 10; }
-    .boton0 { grid-area: 2 / 10 / 3 / 11; }
-    .botonCE { grid-area: 2 / 11 / 3 / 12; }
-    .botonIntro { grid-area: 2 / 12 / 3 / 13; }
+    .boton1 { grid-area: 1 / 1 / 2 / 2; }
+    .boton2 { grid-area: 1 / 2 / 2 / 3; }
+    .boton3 { grid-area: 1 / 3 / 2 / 4; }
+    .boton4 { grid-area: 1 / 4 / 2 / 5; }
+    .boton5 { grid-area: 1 / 5 / 2 / 6; }
+    .boton6 { grid-area: 1 / 6 / 2 / 7; }
+    .boton7 { grid-area: 1 / 7 / 2 / 8; }
+    .boton8 { grid-area: 1 / 8 / 2 / 9; }
+    .boton9 { grid-area: 1 / 9 / 2 / 10; }
+    .boton0 { grid-area: 1 / 10 / 2 / 11; }
+    .botonCE { grid-area: 1 / 11 / 2 / 12; }
+    .botonIntro { grid-area: 1 / 12 / 2 / 13; }
 
 /* estilo panel */
 
