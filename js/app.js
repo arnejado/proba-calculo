@@ -19,6 +19,7 @@ for (var i = 0; i < botones.length; i++) {
       numero += numeroBoton;
       
       // Mostrar el número en el div con la clase "panel"
+      numero = Number(numero);
       resultado.textContent = numero;
     });
   }
