@@ -2,7 +2,7 @@
 var numero = 0;
 
 // Obtener el div con la clase "panel"
-var areaCalculo = document.querySelector(".areaCalculo");
+var resultado = document.querySelector(".resultado");
 
 // Escuchar los botones con el id igual al número
 var botones = document.querySelectorAll(".boton");
@@ -19,7 +19,7 @@ for (var i = 0; i < botones.length; i++) {
       numero += numeroBoton;
       
       // Mostrar el número en el div con la clase "panel"
-      areaCalculo.textContent = numero;
+      resultado.textContent = numero;
     });
   }
 
@@ -34,7 +34,7 @@ for (var i = 0; i < botones.length; i++) {
   function borrar () {
     console.log(numero *2)
     numero = 0
-    areaCalculo.textContent = numero;
+    resultado.textContent = numero;
     console.log(typeof numero);
     console.log ("borrando...");
   }

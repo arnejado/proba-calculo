@@ -48,10 +48,27 @@
 
 /* terminamos el css del teclado */
 
+.areaCalculo {
+  display: grid;
+  grid-template-columns: 25px repeat(3, 1fr) 25px;
+  grid-template-rows: 50px 1fr 50px 1fr 50px;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  }
+  
+  .cifra1 { grid-area: 2 / 2 / 3 / 3; }
+  .simbolo { grid-area: 2 / 3 / 3 / 4; }
+  .cifra2 { grid-area: 2 / 4 / 3 / 5; }
+  .resultado { grid-area: 4 / 2 / 5 / 5; }
 
 
-
-
+.areaCalculo {
+      /* Fuente del número */
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+}
 
 
 /* Estilo del botón */
