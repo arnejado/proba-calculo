@@ -1,8 +1,8 @@
 // Crear una variable para almacenar un número
-var numero = "";
+var numero = 0;
 
 // Obtener el div con la clase "panel"
-var panel = document.querySelector(".panel");
+var areaCalculo = document.querySelector(".panel");
 
 // Escuchar los botones con el id igual al número
 var botones = document.querySelectorAll(".boton");
@@ -32,7 +32,9 @@ for (var i = 0; i < botones.length; i++) {
   botonBorrar.addEventListener("click", borrar);
   
   function borrar () {
+    console.log(numero *2)
     numero = 0
     panel.textContent = numero;
+    console.log(typeof numero);
     console.log ("borrando...");
   }
