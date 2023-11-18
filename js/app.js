@@ -1,8 +1,21 @@
+// Obtener los divs de la pantalla
+var resultado = document.querySelector(".resultado");
+var divCifra1 = document.querySelector(".cifra1");
+var divCifra2 = document.querySelector(".cifra2");
+
+
 // Crear una variable para almacenar un número
 var numero = 0;
 
-// Obtener el div con la clase "panel"
-var resultado = document.querySelector(".resultado");
+// Crear cifras aletorias
+let cifra1 = 0;
+cifra1 = Math.floor(Math.random() * 11);
+let cifra2 = 0;
+cifra2 = Math.floor(Math.random() * 11);
+
+//poner cifras aleatorias en la pantalla
+divCifra1.textContent = cifra1
+divCifra2.textContent = cifra2
 
 // Escuchar los botones con el id igual al número
 var botones = document.querySelectorAll(".boton");
