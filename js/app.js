@@ -3,6 +3,9 @@ var resultado = document.querySelector(".resultado");
 var divCifra1 = document.querySelector(".cifra1");
 var divCifra2 = document.querySelector(".cifra2");
 
+//botón de borrar
+var botonBorrar = document.querySelector(".botonCE");
+var botonIntro = document.querySelector(".botonIntro");
 
 // Crear una variable para almacenar un número
 var numero = 0;
@@ -22,7 +25,7 @@ var botones = document.querySelectorAll(".boton");
 // Escuchar boton borrar
 botonBorrar.addEventListener("click", borrar);
 // Escuchar boton Aceptar
-botonBorrar.addEventListener("click", aceptar);
+botonIntro.addEventListener("click", aceptar);
 
 
 console.log(botones);
@@ -42,9 +45,6 @@ for (var i = 0; i < botones.length; i++) {
     });
   }
 
-  //botón de borrar
-
-  var botonBorrar = document.querySelector(".botonCE");
 
   console.log(botonBorrar);
 
