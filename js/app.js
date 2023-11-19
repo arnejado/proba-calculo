@@ -19,6 +19,11 @@ divCifra2.textContent = cifra2
 
 // Escuchar los botones con el id igual al número
 var botones = document.querySelectorAll(".boton");
+// Escuchar boton borrar
+botonBorrar.addEventListener("click", borrar);
+// Escuchar boton Aceptar
+botonBorrar.addEventListener("click", aceptar);
+
 
 console.log(botones);
 
@@ -43,7 +48,6 @@ for (var i = 0; i < botones.length; i++) {
 
   console.log(botonBorrar);
 
-  botonBorrar.addEventListener("click", borrar);
   
   function borrar () {
     console.log(numero *2)
@@ -52,3 +56,10 @@ for (var i = 0; i < botones.length; i++) {
     console.log(typeof numero);
     console.log ("borrando...");
   }
+
+  function aceptar() {
+    if (numero === (cifra1*cifra2)) {
+      resultado.textContent ="ok";
+  } else {
+      resultado.textContent ="error";
+  }}
