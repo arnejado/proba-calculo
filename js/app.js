@@ -62,4 +62,8 @@ for (var i = 0; i < botones.length; i++) {
       resultado.textContent ="ok";
   } else {
       resultado.textContent ="error";
-  }}
+  }
+  setTimeout(() => {
+    location.reload ();
+  }, 3000);
+}
