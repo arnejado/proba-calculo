@@ -5,6 +5,7 @@ body {
 
 
 .pantalla {
+  padding: 5px;
   max-height: 90vh;
   display: grid;
   grid-template-columns: 1fr;
