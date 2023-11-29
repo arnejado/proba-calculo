@@ -65,5 +65,5 @@ for (var i = 0; i < botones.length; i++) {
   }
   setTimeout(() => {
     location.reload ();
-  }, 3000);
+  }, 2000);
 }
