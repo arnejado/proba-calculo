@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .progress {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 310px;
+        width: 40px;
+        background-color: #948383;
+        border-radius: 25px;
+    }
+
+    .dot {
+        height: 20px;
+        width: 20px;
+        margin: 5px 5px;
+        background-color: #000000;
+        border-radius: 50%;
+        transition: background-color 0.5s ease;
+        text-align: center;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+</style>
+</head>
+<body>
+
+<h2>Barra de progreso con puntos verdes</h2>
+
+<div class="progress">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<script>
+  var dots = document.getElementsByClassName("dot");
+  var i;
+
+  function move() {
+  var i = 0;
+
+  // Utilizar setInterval para ejecutar la función cada 1.5 segundos
+  var intervalId = setInterval(function () {
+    // Verificar si hemos alcanzado el final de la lista
+    if (i < dots.length) {
+      // Cambiar la clase del elemento actual a "dot active"
+      dots[i].className = "dot active";
+      dots[i].textContent = i + 1; // Sumamos 1 porque i empieza en 0  
+      // Incrementar el índice para el próximo elemento
+      i++;
+    } else {
+      // Si hemos alcanzado el final, detener el intervalo
+      clearInterval(intervalId);
+    }
+  }, 1500);
+}
+
+// Llamar a la función move para iniciar el proceso
+move();
+    
+
+  </script>
+
+</body>
+</html>
