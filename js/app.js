@@ -3,12 +3,20 @@ var resultado = document.querySelector(".resultado");
 var divCifra1 = document.querySelector(".cifra1");
 var divCifra2 = document.querySelector(".cifra2");
 
+// obtener los divs de los puntos de progreso
+var dots = document.getElementsByClassName("dot");
+
+
 //botón de borrar
 var botonBorrar = document.querySelector(".botonCE");
 var botonIntro = document.querySelector(".botonIntro");
 
 // Crear una variable para almacenar un número
 var numero = 0;
+
+//Crear el objeto donde va el historico
+var historico = {};
+
 
 // Crear cifras aletorias
 let cifra1 = 0;
@@ -49,21 +57,28 @@ for (var i = 0; i < botones.length; i++) {
   console.log(botonBorrar);
 
   
-  function borrar () {
-    console.log(numero *2)
-    numero = 0
-    resultado.textContent = numero;
-    console.log(typeof numero);
-    console.log ("borrando...");
-  }
+  
+function borrar () {
+  console.log(numero *2)
+  numero = 0
+  resultado.textContent = numero;
+  console.log(typeof numero);
+  console.log ("borrando...");
+}
 
-  function aceptar() {
-    if (numero === (cifra1*cifra2)) {
-      resultado.textContent ="ok";
+
+function aceptar() {
+
+  var resultadoCorrecto = cifra1*cifra2;
+  console.log(resultadoCorrecto);
+
+  if (numero === (resultadoCorrecto)) {
+    resultado.textContent ="ok";
+    
   } else {
-      resultado.textContent ="error";
+    resultado.textContent ="error";
   }
-  setTimeout(() => {
-    location.reload ();
-  }, 2000);
+setTimeout(() => {
+  location.reload ();
+}, 2000);
 }
