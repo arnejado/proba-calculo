@@ -90,14 +90,17 @@ body {
 
 
 .areaCalculo {
-      /* Fuente del número */
-      font-family: chalk, sans-serif;
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      text-align: right;
-      text-align: center;
-      background-image: url("../img/fondoPizarra.jpg");
+    /* Fuente del número */
+    font-family: chalk, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    text-align: center;
+    background-image: url("../img/fondoPizarra.jpg");
+    border: 2px solid #a9a9a9;
+    border-radius: 10px;
+    align-self: center;
 }
 
 .resultado {
@@ -145,3 +148,31 @@ body {
     transform: scale(1.1);
   }
   
+
+
+  /* lo de la barra de progueso */
+
+.progreso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 310px;
+    width: 40px;
+    background-color: #948383;
+    border-radius: 25px;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    margin: 5px 5px;
+    background-color: #000000;
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+    text-align: center;
+}
+
+.active {
+    background-color: #4CAF50;
+}
