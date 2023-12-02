@@ -74,7 +74,7 @@ function aceptar() {
 
   if (numero === (resultadoCorrecto)) {
     resultado.textContent ="ok";
-    
+    historico(cifra1,cifra2,resultadoCorrecto);
   } else {
     resultado.textContent ="error";
   }
@@ -82,3 +82,10 @@ setTimeout(() => {
   location.reload ();
 }, 2000);
 }
+
+function historico(cifra1,cifra2,resultadoCorrecto) {
+  console.log(cifra1,cifra2,resultadoCorrecto);
+
+}
+
+
