@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'chalk';
+  src: url('../fonts/chalkdust.ttf') format('truetype');
+  /* Agrega las demás variantes de la fuente si las tienes */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -71,7 +77,7 @@ body {
 .cuenta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr repeat(3, 30px) 1fr;
+    grid-template-rows: 1fr repeat(3, 40px) 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -85,13 +91,17 @@ body {
 
 .areaCalculo {
       /* Fuente del número */
-      font-family: Arial, sans-serif;
+      font-family: chalk, sans-serif;
       font-size: 24px;
       font-weight: bold;
       color: white;
       text-align: right;
       text-align: center;
       background-image: url("../img/fondoPizarra.jpg");
+}
+
+.resultado {
+  border-top: white 3px solid;
 }
 
 
