@@ -18,15 +18,7 @@ var numero = 0;
 var historico = {};
 
 
-// Crear cifras aletorias
-let cifra1 = 0;
-cifra1 = Math.floor(Math.random() * 11);
-let cifra2 = 0;
-cifra2 = Math.floor(Math.random() * 11);
 
-//poner cifras aleatorias en la pantalla
-divCifra1.textContent = cifra1
-divCifra2.textContent = cifra2
 
 // Escuchar los botones con el id igual al número
 var botones = document.querySelectorAll(".boton");
@@ -40,24 +32,37 @@ console.log(botones);
 
 // Recorrer los botones y añadir un evento de clic
 for (var i = 0; i < botones.length; i++) {
-    botones[i].addEventListener("click", function() {
-      // Obtener el número del botón a través del id
-      var numeroBoton = this.id.replace("boton", "");
-      
-      // Concatenar el número del botón a la variable
-      numero += numeroBoton;
-      
-      // Mostrar el número en el div con la clase "panel"
-      numero = Number(numero);
-      resultado.textContent = numero;
-    });
-  }
+  botones[i].addEventListener("click", function() {
+    // Obtener el número del botón a través del id
+    var numeroBoton = this.id.replace("boton", "");
+    
+    // Concatenar el número del botón a la variable
+    numero += numeroBoton;
+    
+    // Mostrar el número en el div con la clase "panel"
+    numero = Number(numero);
+    resultado.textContent = numero;
+  });
+}
 
 
-  console.log(botonBorrar);
+console.log(botonBorrar);
 
+function rellenar () {
   
+  // Crear cifras aletorias
+  let cifra1 = 0;
+  cifra1 = Math.floor(Math.random() * 11);
+  let cifra2 = 0;
+  cifra2 = Math.floor(Math.random() * 11);  
   
+  //poner cifras aleatorias en la pantalla
+  divCifra1.textContent = cifra1
+  divCifra2.textContent = cifra2
+  
+}
+
+
 function borrar () {
   console.log(numero *2)
   numero = 0
@@ -67,6 +72,7 @@ function borrar () {
 }
 
 
+
 function aceptar() {
 
   var resultadoCorrecto = cifra1*cifra2;
@@ -74,7 +80,7 @@ function aceptar() {
 
   if (numero === (resultadoCorrecto)) {
     resultado.textContent ="ok";
-    historico(cifra1,cifra2,resultadoCorrecto);
+    historico();
   } else {
     resultado.textContent ="error";
   }
@@ -83,8 +89,8 @@ setTimeout(() => {
 }, 2000);
 }
 
-function historico(cifra1,cifra2,resultadoCorrecto) {
-  console.log(cifra1,cifra2,resultadoCorrecto);
+function historico() {
+  console.log("historico");
 
 }
 
