@@ -11,13 +11,14 @@ var dots = document.getElementsByClassName("dot");
 var botonBorrar = document.querySelector(".botonCE");
 var botonIntro = document.querySelector(".botonIntro");
 
-// Crear una variable para almacenar un número
+// Declarar variables globlaes
+var cifra1 = 0;
+var cifra2 = 0;
+var resultadoCorrecto = 0;
 var numero = 0;
 
 //Crear el objeto donde va el historico
 var historico = {};
-
-
 
 
 // Escuchar los botones con el id igual al número
@@ -45,15 +46,14 @@ for (var i = 0; i < botones.length; i++) {
   });
 }
 
+rellenar();
 
-console.log(botonBorrar);
 
 function rellenar () {
-  
+  // ponemos el resultado a 0
+  numero = 0;
   // Crear cifras aletorias
-  let cifra1 = 0;
   cifra1 = Math.floor(Math.random() * 11);
-  let cifra2 = 0;
   cifra2 = Math.floor(Math.random() * 11);  
   
   //poner cifras aleatorias en la pantalla
@@ -61,7 +61,6 @@ function rellenar () {
   divCifra2.textContent = cifra2
   
 }
-
 
 function borrar () {
   console.log(numero *2)
@@ -71,27 +70,28 @@ function borrar () {
   console.log ("borrando...");
 }
 
+function rellenarProgueso() {
+  console.log("historico");
 
+}
 
 function aceptar() {
-
-  var resultadoCorrecto = cifra1*cifra2;
+  console.log("entrado en acpetar");
+  console.log(resultadoCorrecto);
+  console.log(cifra1);
+  resultadoCorrecto = cifra1*cifra2;
   console.log(resultadoCorrecto);
 
   if (numero === (resultadoCorrecto)) {
     resultado.textContent ="ok";
-    historico();
+    rellenarProgueso();
   } else {
     resultado.textContent ="error";
   }
 setTimeout(() => {
-  location.reload ();
+  rellenar ();
 }, 2000);
 }
 
-function historico() {
-  console.log("historico");
-
-}
 
 
