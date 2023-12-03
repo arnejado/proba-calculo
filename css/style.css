@@ -173,6 +173,10 @@ body {
     text-align: center;
 }
 
-.active {
+.correcto {
     background-color: #4CAF50;
+}
+
+.incorrecto {
+  background-color: #f30000;
 }

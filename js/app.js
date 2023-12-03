@@ -16,6 +16,9 @@ var cifra1 = 0;
 var cifra2 = 0;
 var resultadoCorrecto = 0;
 var numero = 0;
+var acertar = true;
+var ojeadorPuntos = 0;
+
 
 //Crear el objeto donde va el historico
 var historico = {};
@@ -29,7 +32,7 @@ botonBorrar.addEventListener("click", borrar);
 botonIntro.addEventListener("click", aceptar);
 
 
-console.log(botones);
+console.log(dots);
 
 // Recorrer los botones y añadir un evento de clic
 for (var i = 0; i < botones.length; i++) {
@@ -50,16 +53,22 @@ rellenar();
 
 
 function rellenar () {
-  // ponemos el resultado a 0
-  numero = 0;
-  // Crear cifras aletorias
-  cifra1 = Math.floor(Math.random() * 11);
-  cifra2 = Math.floor(Math.random() * 11);  
-  
-  //poner cifras aleatorias en la pantalla
-  divCifra1.textContent = cifra1
-  divCifra2.textContent = cifra2
-  
+
+  if (ojeadorPuntos === 9) {
+    resultado.textContent = "fin";
+  } else {
+    // ponemos el resultado a 0
+    numero = 0;
+    resultado.textContent = numero;
+
+    // Crear cifras aletorias
+    cifra1 = Math.floor(Math.random() * 11);
+    cifra2 = Math.floor(Math.random() * 11);  
+    
+    //poner cifras aleatorias en la pantalla
+    divCifra1.textContent = cifra1
+    divCifra2.textContent = cifra2
+  }
 }
 
 function borrar () {
@@ -71,8 +80,20 @@ function borrar () {
 }
 
 function rellenarProgueso() {
-  console.log("historico");
-
+  console.log(acertar);
+  console.log(cifra1);
+  console.log(cifra2);
+  console.log(resultadoCorrecto);
+  console.log(ojeadorPuntos);
+  if (acertar === true) {
+    dots[ojeadorPuntos].className = "dot correcto";
+    console.log ("acertó")
+  } else {
+    console.log ("falló")
+    dots[ojeadorPuntos].className = "dot incorrecto";
+  }
+  
+  ojeadorPuntos++
 }
 
 function aceptar() {
@@ -84,9 +105,12 @@ function aceptar() {
 
   if (numero === (resultadoCorrecto)) {
     resultado.textContent ="ok";
+    acertar = true
     rellenarProgueso();
   } else {
     resultado.textContent ="error";
+    acertar = false
+    rellenarProgueso()
   }
 setTimeout(() => {
   rellenar ();
