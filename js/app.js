@@ -54,8 +54,8 @@ rellenar();
 
 function rellenar () {
 
-  if (ojeadorPuntos === 9) {
-    resultado.textContent = "fin";
+  if (ojeadorPuntos === 10) {
+    fin ();
   } else {
     // ponemos el resultado a 0
     numero = 0;
@@ -114,8 +114,10 @@ function aceptar() {
   }
 setTimeout(() => {
   rellenar ();
-}, 2000);
+}, 1500);
 }
 
-
+function fin () {
+  console.log ("llegamos al final");
+}
 
