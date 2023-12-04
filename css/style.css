@@ -132,6 +132,10 @@ body {
     cursor: pointer;
     transition: 0.3s;
   }
+
+  .botonRecargar {
+    font-size: 16px;
+  }
   
   /* Efecto al pasar el ratón */
   .boton:hover, .botonEspecial:hover {
@@ -180,3 +184,30 @@ body {
   background-color: #f30000;
 }
 
+.mostrarTotales {
+ color: black;
+ /* Borde redondeado */
+ border: 2px solid #a9a9a9;
+ border-radius: 10px;
+ /* Sombra */
+ height: 50px;
+ /* Fuente del número */
+ font-family: Arial, sans-serif;
+ font-size: 16px;
+ font-weight: bold;
+ /* Alineación del número */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* Efecto al pasar el ratón */
+ cursor: pointer;
+ transition: 0.3s;
+}
+
+.acertados {
+  background-color: #7bcf7d;
+}
+
+.fallados {
+  background-color: #cf7b90;
+}

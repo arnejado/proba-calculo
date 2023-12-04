@@ -18,7 +18,8 @@ var resultadoCorrecto = 0;
 var numero = 0;
 var acertar = true;
 var ojeadorPuntos = 0;
-
+var contadorAcertados = 0;
+var contadorFallados = 0;
 
 //Crear el objeto donde va el historico
 var historico = {};
@@ -56,7 +57,7 @@ rellenar();
 function rellenar () {
 
     // ponemos el resultado a 0
-    numero = 0;
+    numero = "";
     resultado.textContent = numero;
 
     // Crear cifras aletorias
@@ -79,8 +80,10 @@ function rellenarProgueso() {
 
   if (acertar === true) {
     dots[ojeadorPuntos].className = "dot correcto";
+    contadorAcertados++
   } else {
     dots[ojeadorPuntos].className = "dot incorrecto";
+    contadorFallados++
   }
   ojeadorPuntos++
   console.log (ojeadorPuntos);
@@ -96,11 +99,9 @@ function aceptar() {
   resultadoCorrecto = cifra1*cifra2;
   
   if (numero === (resultadoCorrecto)) {
-    resultado.textContent ="ok";
     acertar = true
     rellenarProgueso();
   } else {
-    resultado.textContent ="error";
     acertar = false
     rellenarProgueso()
   }
@@ -109,6 +110,8 @@ function aceptar() {
 
 function fin () {
   console.log("entramos en el fin");
+  console.log(contadorAcertados);
+  console.log(contadorFallados);
   let teclado = document.querySelector(".teclado");
   // Eliminar todos los botones del teclado
   let botones = teclado.querySelectorAll("button");
@@ -116,11 +119,19 @@ function fin () {
     teclado.removeChild(botones[i]);
   }
   // Crear un nuevo botón para volver a empezar
+  let totalAcertados = document.createElement("div");
+  totalAcertados.textContent = `Acertados: ${contadorAcertados}`;
+  totalAcertados.className = "mostrarTotales acertados";
   let botonRecargar = document.createElement("button");
   botonRecargar.textContent = "Volver a empezar";
   botonRecargar.className = "botonRecargar botonEspecial";
+  let totalFallados = document.createElement("div");
+  totalFallados.textContent = `Fallados: ${contadorFallados}`;
+  totalFallados.className = "mostrarTotales fallados";
   // Añadir el nuevo botón al teclado
+  teclado.appendChild(totalAcertados);
   teclado.appendChild(botonRecargar);
+  teclado.appendChild(totalFallados);
   // Añadir un evento de clic al nuevo botón que reinicie el juego
   botonRecargar.addEventListener("click", function() {
     // Resetea las variables
