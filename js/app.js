@@ -114,6 +114,7 @@ function aceptar() {
 
 function fin () {
   let teclado = document.querySelector(".teclado");
+  let fuegos = document.querySelector(".fuegos");
 
 
   console.log("entramos en el fin");
@@ -142,16 +143,14 @@ function fin () {
 
   //Añadir fuegos artificiales si tenemos pleno
   if (contadorAcertados === 10) {
-    console.log("pleno");
-    let firework1 = document.createElement("div");
-    let firework2 = document.createElement("div");
-    let firework3 = document.createElement("div");
-    firework1.className = "firework"; 
-    firework2.className = "firework"; 
-    firework3.className = "firework"; 
-    teclado.appendChild(firework1);
-    teclado.appendChild(firework2);
-    teclado.appendChild(firework3);
+    let firework = document.createElement("div");
+    firework.className = "firework"; 
+    fuegos.appendChild(firework);
+    // Clonar el elemento dos veces y añadirlo al contenedor
+    let firework2 = firework.cloneNode();
+    let firework3 = firework.cloneNode();
+    fuegos.appendChild(firework2);
+    fuegos.appendChild(firework3);
   }
 
 
