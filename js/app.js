@@ -39,24 +39,22 @@ for (var i = 0; i < botones.length; i++) {
   botones[i].addEventListener("click", function() {
     // Obtener el número del botón a través del id
     var numeroBoton = this.id.replace("boton", "");
-    
     // Concatenar el número del botón a la variable
     numero += numeroBoton;
-    
     // Mostrar el número en el div con la clase "panel"
     numero = Number(numero);
     resultado.textContent = numero;
   });
 }
 
+
+// -->  EMPIEZA EL PROGRAMA  <--
+
 rellenar();
 
 
 function rellenar () {
 
-  if (ojeadorPuntos === 10) {
-    fin ();
-  } else {
     // ponemos el resultado a 0
     numero = 0;
     resultado.textContent = numero;
@@ -69,40 +67,33 @@ function rellenar () {
     divCifra1.textContent = cifra1
     divCifra2.textContent = cifra2
   }
-}
+
 
 function borrar () {
   console.log(numero *2)
   numero = 0
   resultado.textContent = numero;
-  console.log(typeof numero);
-  console.log ("borrando...");
 }
 
 function rellenarProgueso() {
-  console.log(acertar);
-  console.log(cifra1);
-  console.log(cifra2);
-  console.log(resultadoCorrecto);
-  console.log(ojeadorPuntos);
+
   if (acertar === true) {
     dots[ojeadorPuntos].className = "dot correcto";
-    console.log ("acertó")
   } else {
-    console.log ("falló")
     dots[ojeadorPuntos].className = "dot incorrecto";
   }
-  
   ojeadorPuntos++
+
+  if (rellenarProgueso === 10 ) {
+    fin()
+  } else {
+    rellenar()
+  }
 }
 
 function aceptar() {
-  console.log("entrado en acpetar");
-  console.log(resultadoCorrecto);
-  console.log(cifra1);
   resultadoCorrecto = cifra1*cifra2;
-  console.log(resultadoCorrecto);
-
+  
   if (numero === (resultadoCorrecto)) {
     resultado.textContent ="ok";
     acertar = true
@@ -112,9 +103,7 @@ function aceptar() {
     acertar = false
     rellenarProgueso()
   }
-setTimeout(() => {
-  rellenar ();
-}, 1500);
+
 }
 
 function fin () {

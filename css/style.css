@@ -64,16 +64,15 @@ body {
 
 .areaCalculo {
   display: grid;
-  grid-template-columns: 20px 1fr 20px 40px 1fr 20px;
-  grid-template-rows: 20px 1fr 20px;
+  grid-template-columns: 20px 1fr 20px 40px 20px;
+  grid-template-rows: 20px 10fr 20px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   }
   
   .cuenta { grid-area: 2 / 2 / 3 / 3; }
   .progreso { grid-area: 2 / 4 / 3 / 5; }
-  .historico { grid-area: 2 / 5 / 3 / 6; }
-
+  
 .cuenta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
