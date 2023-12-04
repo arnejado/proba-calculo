@@ -109,10 +109,12 @@ function aceptar() {
 }
 
 function fin () {
+  let teclado = document.querySelector(".teclado");
+
+
   console.log("entramos en el fin");
   console.log(contadorAcertados);
   console.log(contadorFallados);
-  let teclado = document.querySelector(".teclado");
   // Eliminar todos los botones del teclado
   let botones = teclado.querySelectorAll("button");
   for (let i = 0; i < botones.length; i++) {
@@ -133,6 +135,22 @@ function fin () {
   teclado.appendChild(botonRecargar);
   teclado.appendChild(totalFallados);
   // Añadir un evento de clic al nuevo botón que reinicie el juego
+
+  //Añadir fuegos artificiales si tenemos pleno
+  if (contadorAcertados === 10) {
+    console.log("pleno");
+    let firework1 = document.createElement("div");
+    let firework2 = document.createElement("div");
+    let firework3 = document.createElement("div");
+    firework1.className = "firework"; 
+    firework2.className = "firework"; 
+    firework3.className = "firework"; 
+    teclado.appendChild(firework1);
+    teclado.appendChild(firework1);
+    teclado.appendChild(firework1);
+  }
+
+
   botonRecargar.addEventListener("click", function() {
     // Resetea las variables
     cifra1 = 0;
