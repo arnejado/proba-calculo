@@ -134,7 +134,7 @@ body {
   }
   
   /* Efecto al pasar el ratón */
-  .boton:hover {
+  .boton:hover, .botonEspecial:hover {
     /* Cambiar el color de fondo */
     background-color: #a9a9a9;
     /* Cambiar el color del borde */
@@ -179,3 +179,4 @@ body {
 .incorrecto {
   background-color: #f30000;
 }
+

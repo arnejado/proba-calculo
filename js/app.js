@@ -83,8 +83,9 @@ function rellenarProgueso() {
     dots[ojeadorPuntos].className = "dot incorrecto";
   }
   ojeadorPuntos++
+  console.log (ojeadorPuntos);
 
-  if (rellenarProgueso === 10 ) {
+  if (ojeadorPuntos === 10 ) {
     fin()
   } else {
     rellenar()
@@ -107,6 +108,33 @@ function aceptar() {
 }
 
 function fin () {
-  console.log ("llegamos al final");
-}
+  console.log("entramos en el fin");
+  let teclado = document.querySelector(".teclado");
+  // Eliminar todos los botones del teclado
+  let botones = teclado.querySelectorAll("button");
+  for (let i = 0; i < botones.length; i++) {
+    teclado.removeChild(botones[i]);
+  }
+  // Crear un nuevo botón para volver a empezar
+  let botonRecargar = document.createElement("button");
+  botonRecargar.textContent = "Volver a empezar";
+  botonRecargar.className = "botonRecargar botonEspecial";
+  // Añadir el nuevo botón al teclado
+  teclado.appendChild(botonRecargar);
+  // Añadir un evento de clic al nuevo botón que reinicie el juego
+  botonRecargar.addEventListener("click", function() {
+    // Resetea las variables
+    cifra1 = 0;
+    cifra2 = 0;
+    resultadoCorrecto = 0;
+    numero = 0;
+    acertar = true;
+    ojeadorPuntos = 0;
+    // Resetea los puntos de progreso
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = "dot";
+    }
+    // Llama a la función rellenar para empezar el juego
+    window.location.reload();})
+};
 
