@@ -61,8 +61,8 @@ function rellenar () {
     resultado.textContent = numero;
 
     // Crear cifras aletorias
-    cifra1 = Math.floor(Math.random() * 11);
-    cifra2 = Math.floor(Math.random() * 11);  
+    cifra1 = 2 + Math.floor(Math.random() * 9);
+    cifra2 = 2 + Math.floor(Math.random() * 9);  
     
     //poner cifras aleatorias en la pantalla
     divCifra1.textContent = cifra1
@@ -78,6 +78,7 @@ function borrar () {
 
 function rellenarProgueso() {
 
+
   if (acertar === true) {
     dots[ojeadorPuntos].className = "dot correcto";
     contadorAcertados++
@@ -88,11 +89,14 @@ function rellenarProgueso() {
   ojeadorPuntos++
   console.log (ojeadorPuntos);
 
-  if (ojeadorPuntos === 10 ) {
-    fin()
-  } else {
-    rellenar()
-  }
+  setTimeout(function() {
+    // El código que se ejecuta después de la pausa va aquí
+    if (ojeadorPuntos === 10 ) {
+      fin()
+    } else {
+      rellenar()
+    }
+  }, 1500); // 1500 ms = 1.5 s
 }
 
 function aceptar() {
@@ -146,8 +150,8 @@ function fin () {
     firework2.className = "firework"; 
     firework3.className = "firework"; 
     teclado.appendChild(firework1);
-    teclado.appendChild(firework1);
-    teclado.appendChild(firework1);
+    teclado.appendChild(firework2);
+    teclado.appendChild(firework3);
   }
 
 
